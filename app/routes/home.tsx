@@ -3,8 +3,12 @@ import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Processo Seletivo - Cote fácil" },
+    {
+      name: "description",
+      content:
+        "Página inicial do processo seletivo Cote Fácil: acesse os três projetos disponíveis.",
+    },
   ];
 }
 
