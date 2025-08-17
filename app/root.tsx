@@ -11,6 +11,7 @@ import "./app.css";
 import "@mantine/core/styles.css";
 import type { Route } from "./+types/root";
 import { createTheme, MantineProvider } from "@mantine/core";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,25 +26,35 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-const theme = createTheme({
-  /** Put your mantine theme override here */
+const theme = createTheme({});
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      staleTime: 1000 * 60 * 5,
+      refetchOnWindowFocus: false,
+    },
+  },
 });
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="!bg-transparent">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="min-h-svh overflow-x-hidden overflow-y-scroll">
-        <MantineProvider theme={theme}>
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </MantineProvider>
+      <body className="min-h-svh overflow-x-hidden overflow-y-scroll bg-transparent">
+        <QueryClientProvider client={queryClient}>
+          <MantineProvider theme={theme}>
+            {children}
+            <ScrollRestoration />
+            <Scripts />
+          </MantineProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );

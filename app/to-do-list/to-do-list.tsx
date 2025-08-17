@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocalStorage } from "@uidotdev/usehooks";
-import { TodoItem } from "~/components/to-do-list/TodoItem";
+import { TodoItem } from "~/components/to-do-list/todo-item";
 import {
   Clipboard,
   ChevronLeft,
