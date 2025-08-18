@@ -1,87 +1,82 @@
-# Welcome to React Router!
+# Processo Seletivo - Cote Fácil
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Este projeto contém três aplicações: Lista de Tarefas, Galeria de Imagens e Quadro de Tarefas
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Requisitos
 
-## Features
+- **Node.js** versão **22.x** ou superior
+- **pnpm** versão **9.x** ou superior
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Instalação
 
-## Getting Started
+1. **Clone o repositório:**
 
-### Installation
+   ```bash
+   git clone https://github.com/seu-usuario/cote-facil-processo-seletivo.git
+   cd cote-facil-processo-seletivo
+   ```
 
-Install the dependencies:
+2. **Instale as dependências:**
 
-```bash
-npm install
-```
+   ```bash
+   pnpm install
+   ```
 
-### Development
+3. **Configure o arquivo `.env`:**
+   - Copie o arquivo de exemplo:
 
-Start the development server with HMR:
+     ```bash
+     cp .env.example .env
+     ```
 
-```bash
-npm run dev
-```
+   - Preencha a variável `VITE_UNSPLASH_ACCESS_KEY` com sua chave de acesso da API do Unsplash.
 
-Your application will be available at `http://localhost:5173`.
+     ```
+     VITE_UNSPLASH_ACCESS_KEY=SEU_ACCESS_KEY_AQUI
+     ```
 
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+## Rodando o projeto em modo desenvolvimento
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+pnpm dev
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+O projeto estará disponível em [http://localhost:5173](http://localhost:5173) (ou porta informada no terminal).
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Tecnologias Utilizadas
 
-### DIY Deployment
+### Geral do Sistema
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+- **React 19**: Biblioteca principal para construção das interfaces.
+- **React Router**: Gerenciamento de rotas e navegação entre páginas.
+- **TypeScript**: Tipagem estática para maior segurança e produtividade.
+- **Tailwind CSS**: Estilização utilitária e responsiva.
+- **Mantine**: Biblioteca de componentes UI moderna e flexível.
+- **pnpm**: Gerenciador de pacotes rápido e eficiente.
+- **Vite**: Ferramenta de build e desenvolvimento rápido.
 
-Make sure to deploy the output of `npm run build`
+### Lista de Tarefas
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+- **React + Styled Components**: Utilizado para demonstrar estilização CSS-in-JS e componentização.
+- **Gerenciamento de estado local**: Simples, usando hooks do React.
+- **Abordagem minimalista**: Foco em clareza e usabilidade.
 
-## Styling
+### Galeria de Imagens
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- **React + ShadCn + Tailwind CSS**: Interface responsiva e moderna com componentes acessíveis e customizáveis (Popover, Tooltip, etc).
+- **TanStack Query**: Gerenciamento eficiente de dados assíncronos e cache de requisições à API.
+- **Unsplash API**: Consumo de dados reais de imagens.
+- **Busca, filtros e downloads**: Funcionalidades avançadas para pesquisa e manipulação de imagens.
+- **Abordagem modular**: Componentes reutilizáveis e separação clara de responsabilidades.
+
+### Quadro de Tarefas
+
+- **React + Mantine**: Utilização avançada de componentes Mantine para UI rica.
+- **@hello-pangea/dnd**: Drag and drop para movimentação de tarefas entre colunas.
+- **Context API + useReducer**: Gerenciamento de estado global e ações complexas.
+- **Notificações e Modais**: Feedback visual ao usuário usando Mantine Notifications e Modals.
+- **Charts**: Visualização de estatísticas com gráficos interativos.
 
 ---
 
-Built with ❤️ using React Router.
+Cada aplicação foi construída utilizando diferentes tecnologias e abordagens para resolver problemas semelhantes, com o objetivo de demonstrar minha versatilidade e conhecimento técnico em múltiplos stacks e padrões de desenvolvimento.
