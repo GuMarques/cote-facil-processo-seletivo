@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { ImageGallery } from "~/image-gallery/image-gallery";
+import { ImageGallery } from "~/pages/image-gallery/image-gallery";
 
 export function meta({}: Route.MetaArgs) {
   return [

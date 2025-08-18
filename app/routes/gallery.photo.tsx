@@ -1,4 +1,4 @@
-import { ImageDetails } from "~/image-details";
+import { ImageDetails } from "~/pages/image-details";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {

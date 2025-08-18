@@ -38,7 +38,7 @@ export function Welcome() {
         >
           <SquareKanban className="size-16 text-indigo-500 mb-4" />
           <span className="text-xl font-semibold text-gray-700">
-            Dashboard de Tarefas
+            Quadro de Tarefas
           </span>
         </Link>
       </div>

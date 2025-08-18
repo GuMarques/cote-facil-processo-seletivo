@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { ToDoList } from "~/to-do-list/to-do-list";
+import { ToDoList } from "~/pages/to-do-list/to-do-list";
 
 export function meta({}: Route.MetaArgs) {
   return [

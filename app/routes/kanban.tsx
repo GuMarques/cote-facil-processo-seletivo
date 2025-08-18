@@ -1,4 +1,4 @@
-import { KanbanBoard } from "~/kanban";
+import { KanbanBoard } from "~/pages/kanban";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
