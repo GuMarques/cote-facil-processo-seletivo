@@ -203,3 +203,41 @@ type UnsplashPhotoDetails = {
   links: Links;
   user: User;
 };
+
+type Priority = "low" | "medium" | "high";
+type TaskStatus = "todo" | "doing" | "done";
+
+type Task = {
+  id: string;
+  title: string;
+  description: string;
+  priority: Priority;
+  status: TaskStatus;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+type Column = {
+  id: TaskStatus;
+  title: string;
+  tasks: Task[];
+};
+
+type KanbanState = {
+  tasks: Task[];
+  columns: Column[];
+  filters: {
+    priority: Priority | "all";
+    status: TaskStatus | "all";
+    search: string;
+  };
+};
+
+type KanbanContextType = KanbanState & {
+  addTask: (task: Omit<Task, "id" | "createdAt" | "updatedAt">) => void;
+  updateTask: (id: string, updates: Partial<Task>) => void;
+  deleteTask: (id: string) => void;
+  moveTask: (taskId: string, newStatus: TaskStatus, newIndex: number) => void;
+  setFilters: (filters: Partial<KanbanState["filters"]>) => void;
+  getFilteredTasks: () => Task[];
+};

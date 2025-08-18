@@ -32,15 +32,15 @@ export function Welcome() {
             Galeria de Imagens
           </span>
         </Link>
-        <div
+        <Link
+          to="/kanban"
           className="bg-white shadow-lg border rounded-xl p-8 cursor-pointer hover:bg-indigo-50 flex flex-col items-center w-72 hover:scale-105 transition-all"
-          role="button"
         >
           <SquareKanban className="size-16 text-indigo-500 mb-4" />
           <span className="text-xl font-semibold text-gray-700">
             Dashboard de Tarefas
           </span>
-        </div>
+        </Link>
       </div>
     </main>
   );

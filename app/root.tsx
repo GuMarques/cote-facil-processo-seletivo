@@ -9,7 +9,10 @@ import {
 
 import "./app.css";
 import "@mantine/core/styles.css";
+import "@mantine/charts/styles.css";
 import type { Route } from "./+types/root";
+import { ModalsProvider } from "@mantine/modals";
+import { KanbanProvider } from "./context/kanban-context";
 import { createTheme, MantineProvider } from "@mantine/core";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -49,11 +52,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="min-h-svh overflow-x-hidden overflow-y-scroll bg-transparent">
         <QueryClientProvider client={queryClient}>
-          <MantineProvider theme={theme}>
-            {children}
-            <ScrollRestoration />
-            <Scripts />
-          </MantineProvider>
+          <KanbanProvider>
+            <MantineProvider theme={theme}>
+              <ModalsProvider>
+                {children}
+                <ScrollRestoration />
+                <Scripts />
+              </ModalsProvider>
+            </MantineProvider>
+          </KanbanProvider>
         </QueryClientProvider>
       </body>
     </html>
